@@ -10,8 +10,8 @@ class New extends React.Component {
                     title: <input type="text" name="title" /><br />
                     entry: < input type="text" name="entry"/> <br />
                     {/* timestamps: < input type="text"   timestamps="  timestamps"/> <br /> */}
-                    shipIsBroken : <input type="checkbox" name="shipIsBroken"/> <br />
-                    <input type="submit" name="" value="Ship"/>
+                    shipIsNotBroken : <input type="checkbox" name="shipIsBroken"/> <br />
+                    <input type="submit" name="" value="Ship Logs"/>
                 </form>
             </div>
         )

@@ -6,8 +6,8 @@ class Show extends React.Component {
       <div>
       <h1> Show Page </h1>
       <h2>   <a href={'/logs'}>Back to Index page</a> </h2>
-       <h3> The {log.title}  {log.entry} </h3>
-        {log.shipIsBroken? 'Its is ready to Break' : 'It is not ready to break... Cant touch this' }
+       <h3> The {log.title}  {log.entry} condition of the ship: {log.shipIsBroken}</h3>
+        {log.shipIsBroken ? 'Ship is ready to Use' : 'Ship is not ready to use... Dont touch it' }
      
       </div>
       );

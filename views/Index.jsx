@@ -20,9 +20,7 @@ class Index extends React.Component {
                                     {log.title} 
                                 </a> {' '}
                                 is {log.entry} <br></br>
-                                {log.shipIsBroken
-                                ? `It is ready to Break`
-                            :   `It is NOT ready to Break`}
+                                {log.shipIsBroken ? `It is ready to use` :   `It is NOT ready to Use`}
                             <br />
                             <a href={`/logs/${log._id}/edit`}> Edit This Log </a>
                             <form action={`/logs/${log._id}?_method=DELETE`} method="POST">

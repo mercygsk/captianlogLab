@@ -9,8 +9,8 @@ class Edit extends React.Component {
                 title: <input type="text"  title=" title" defaultValue={this.props.log.title} /><br />
                 entry: <input type="text"entry="entry" defaultValue={this.props.log.entry} /><br />
                 {/* timestamps: <input type="text"timestamps="timestamps" defaultValue={this.props.log.timestamps} /><br /> */}
-                    Is Ready To Break:
-                    {this.props.log.shipIsBroken ? <input type="checkbox" title="shipIsBroken" defaultChecked /> : <input type="checkbox" title="shipIsBroken" />}
+                    Is Ready To Use:
+                    {this.props.log.shipIsBroken ? <input type="checkbox" name="shipIsBroken" defaultChecked/> : <input type="checkbox" name="shipIsBroken" />}
                     <br />
                     <input type="submit" value="Submit Changes" />
                 </form>

@@ -1,5 +1,23 @@
+
+// express => web framework for create server and writing routes  ---npm i express
+//node_modules --npm init-y
+//mongoose => ODM for connecting to and sending queries to a mongo database --npm i mongoose dotenv
+
+// method-override => allows us to swap the method of a request based on a URL query
+
+//jsx-view-engine => the templating engine   --npm install jsx-view-engine react react-dom
+
+//dotenv => will allow us to use a `.env` file to define environmental variables we can access via the `process.env` object  -- npm i dotenv
+
+// morgan => logs details about requests to our server, mainly to help us debug --npm i morgan
+
 // require dotenv so that I can use the .env fil
 require('dotenv').config();
+
+const morgan = require("morgan"); //import morgan
+
+const path = require("path"); // built in node module we use to resolve paths more on this when we use it
+
 const express = require('express');
 // require mongoose so that I can connect to my db
 const mongoose = require('mongoose');
@@ -56,7 +74,7 @@ app.use((req, res, next) => {
     console.log('Middleware: I run for all routes');
     next();
 })
-
+app.use(morgan("tiny")); //logging
 //near the top, around other app.use() calls
 app.use(express.urlencoded({extended:false}));
 
@@ -80,7 +98,7 @@ app.use(methodOverride('_method'));
 // S - Show     GET         READ - display a specific element
 
 app.get('/', (req, res) => {
-    res.send('this is my CaptainsLog root route');
+    res.send('This is my CaptainsLog root route');
 });
 
 // I - INDEX - dsiplays a list of all fruits
@@ -120,6 +138,7 @@ app.delete('/logs/:id', async (req, res) => {
 
 // U - UPDATE - makes the actual changes to the database based on the EDIT form
 app.put('/logs/:id', async (req, res) => {
+    console.log(req.body.shipIsBroken);
     if (req.body.shipIsBroken === 'on') {
         req.body.shipIsBroken = true;
     } else {
